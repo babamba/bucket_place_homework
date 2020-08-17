@@ -1,1 +1,23 @@
 @import "~antd/dist/antd.css";
+
+body {
+  background-color: #ffffff;
+  font-family: "Spoqa Han Sans", -apple-system, system-ui, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 3px;
+  height: 5px;
+}
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: gray;
+}
+body::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
