@@ -4,4 +4,5 @@ export type Content = {
   image_url: string;
   nickname: string;
   profile_image_url: string;
+  isBookMark: boolean;
 };
