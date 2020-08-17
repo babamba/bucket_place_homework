@@ -2,7 +2,7 @@ import axios from "axios";
 
 class BookService {
   findBookList = async (page: number) => {
-    const url = `${process.env.REACT_APP_URL}/page_${page}.json`;
+    const url = `${process.env.REACT_APP_CONTENT_URL}/page_${page}.json`;
     return axios.get(url, {
       headers: {
         "Content-Type": "application/json",
