@@ -8,6 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  margin: 0px 60px;
 `;
 
 const MainPage = () => {
