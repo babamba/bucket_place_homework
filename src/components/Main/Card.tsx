@@ -1,11 +1,11 @@
-import React, { FC } from "react";
-import styled from "styled-components";
-import { Col, message } from "antd";
-import { Content } from "../../interface/content";
-import OFFBookMarkImg from "../../assets/images/on-img.png";
-import ONBookMarkImg from "../../assets/images/blue.png";
-import { observer } from "mobx-react";
-import useStores from "../../hooks/useStores";
+import React, { FC } from 'react';
+import styled from 'styled-components';
+import { Col, message } from 'antd';
+import { Content } from '../../interface/content';
+import OFFBookMarkImg from '../../assets/images/on-img.png';
+import ONBookMarkImg from '../../assets/images/blue.png';
+import { observer } from 'mobx-react';
+import useStores from '../../hooks/useStores';
 
 const Container = styled.div`
   text-align: center;
@@ -37,10 +37,19 @@ const ContentImg = styled.img`
   border-radius: 10px;
 `;
 const BookMarkBox = styled.div`
+  transition: all ease 0.5s 0s;
   position: absolute;
   bottom: 44px;
   right: 20px;
   cursor: pointer;
+  &:hover {
+    transform: translateY(-1px) scale(1.2);
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.1);
+  }
+  &:active {
+    transform: translateY(0px) scale(1);
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0);
+  }
 `;
 
 const BookMarkImg = styled.img`
@@ -54,7 +63,7 @@ interface Props {
 
 const Card: FC<Props> = (props: Props) => {
   const {
-    bookStore: { BookMarkAction, OnlyBookMark },
+    bookStore: { BookMarkAction, OnlyBookMark }
   } = useStores();
 
   const { content } = props;
@@ -69,11 +78,11 @@ const Card: FC<Props> = (props: Props) => {
     //북마크만 보기상태이고
     if (OnlyBookMark) {
       // 콘텐츠의 북마크 여부가 true이면
-      if (isBookMark) return "block";
-      else return "none";
+      if (isBookMark) return 'block';
+      else return 'none';
     } else {
       // 전체보기상태이면
-      return "block";
+      return 'block';
     }
   };
 
@@ -86,7 +95,7 @@ const Card: FC<Props> = (props: Props) => {
       xl={6}
       xxl={6}
       style={{
-        display: isViewCheck(content.isBookMark),
+        display: isViewCheck(content.isBookMark)
       }}
     >
       <Container>
@@ -96,9 +105,7 @@ const Card: FC<Props> = (props: Props) => {
         </ContentHead>
         <ContentImg src={content.image_url} />
         <BookMarkBox onClick={() => handleAddBookMark(content.id)}>
-          <BookMarkImg
-            src={content.isBookMark ? ONBookMarkImg : OFFBookMarkImg}
-          />
+          <BookMarkImg src={content.isBookMark ? ONBookMarkImg : OFFBookMarkImg} />
         </BookMarkBox>
       </Container>
     </Col>
