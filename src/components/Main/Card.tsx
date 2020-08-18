@@ -44,11 +44,9 @@ const BookMarkBox = styled.div`
   cursor: pointer;
   &:hover {
     transform: translateY(-1px) scale(1.2);
-    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.1);
   }
   &:active {
     transform: translateY(0px) scale(1);
-    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0);
   }
 `;
 
